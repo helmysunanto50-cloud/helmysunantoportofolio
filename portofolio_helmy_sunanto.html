@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helmy Sunanto | Portfolio</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Custom Olive Green Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        olive: {
+                            50: '#f5f7f2',
+                            100: '#e7ecdf',
+                            200: '#d1ddc1',
+                            300: '#b1c599',
+                            400: '#92a875',
+                            500: '#738c55', // Primary Olive
+                            600: '#556B2F', // Dark Olive Green
+                            700: '#455628',
+                            800: '#384623',
+                            900: '#303c20',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Selection Color */
+        ::selection {
+            background-color: #556B2F;
+            color: #ffffff;
+        }
+        body {
+            background-color: #FAFAFA;
+            color: #1F2937;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold text-olive-600 tracking-tight">Helmy<span class="text-gray-800">Sunanto.</span></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-olive-600 font-medium transition-colors text-sm">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-olive-600 font-medium transition-colors text-sm">Experience</a>
+                    <a href="#skills" class="text-gray-600 hover:text-olive-600 font-medium transition-colors text-sm">Skills</a>
+                    <a href="#contact" class="px-5 py-2 rounded-full bg-olive-600 text-white font-medium hover:bg-olive-700 transition-colors shadow-sm text-sm">Contact Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-olive-600 focus:outline-none" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col text-center">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-olive-600 hover:bg-olive-50 rounded-md">About</a>
+                <a href="#experience" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-olive-600 hover:bg-olive-50 rounded-md">Experience</a>
+                <a href="#skills" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-olive-600 hover:bg-olive-50 rounded-md">Skills</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-olive-600 hover:bg-olive-50 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-olive-50/50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+            <!-- Left Text Content -->
+            <div class="w-full md:w-3/5 text-center md:text-left space-y-4">
+                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-olive-800 bg-olive-100 rounded-full mb-2">
+                    S1 Ilmu Komunikasi Graduate
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+                    Halo, Saya <span class="text-olive-600">Helmy Sunanto</span>
+                </h1>
+                
+                <h2 class="text-2xl md:text-3xl font-medium text-gray-700 italic">
+                    "Communicate. Coordinate. Connect"
+                </h2>
+                
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto md:mx-0 leading-relaxed pt-2">
+                    Saya memiliki ketertarikan kuat dalam mengembangkan karier di bidang komunikasi, pelayanan, dan koordinasi. Terbiasa berinteraksi dengan berbagai pihak dan siap memberikan dampak positif melalui komunikasi yang efektif.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-6">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-3 rounded-full bg-olive-600 text-white font-semibold hover:bg-olive-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                        Let's Talk <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#experience" class="w-full sm:w-auto px-8 py-3 rounded-full bg-white text-olive-600 font-semibold border-2 border-olive-600 hover:bg-olive-50 transition-all flex items-center justify-center gap-2">
+                        Lihat Portofolio
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Profile Image -->
+            <div class="w-full md:w-2/5 flex justify-center relative">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-xl bg-gradient-to-tr from-olive-200 to-olive-50 flex items-center justify-center overflow-hidden z-10">
+                    <img id="hero-profile-img" src="WhatsApp%20Image%202026-09-22%20at%2018.58.40.jpeg" alt="Helmy Sunanto" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Education Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-olive-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Profil Singkat -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 flex items-center gap-2">
+                        <i class="fa-solid fa-id-card text-olive-600"></i> Profil Profesional
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        Saya seorang lulusan baru S1 Ilmu Komunikasi yang terbiasa berkomunikasi dan berinteraksi dengan berbagai pihak melalui pengalaman kerja, organisasi, dan proyek. Saya adalah individu yang disiplin, bertanggung jawab, mampu bekerja secara individu maupun dalam tim, serta cepat beradaptasi dengan lingkungan baru.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        Selama masa studi dan pengalaman lapangan, saya telah mengembangkan kompetensi di bidang pelayanan dan koordinasi dengan rekam jejak sebagai Liaison Officer, Usher, Server, serta Tutor Privat.
+                    </p>
+                </div>
+
+                <!-- Pendidikan -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-gray-800 flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-olive-600"></i> Pendidikan
+                    </h3>
+                    
+                    <div class="relative border-l-2 border-olive-200 pl-6 ml-3 space-y-8">
+                        <!-- Edu 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[33px] bg-white border-2 border-olive-600 w-4 h-4 rounded-full mt-1.5"></span>
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                <span class="text-sm font-semibold text-olive-600 bg-olive-50 px-3 py-1 rounded-full mb-2 inline-block">2026</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">Universitas Terbuka</h4>
+                                <p class="text-gray-700 font-medium text-sm mb-2">S1 Ilmu Komunikasi</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">Fokus pada komunikasi interpersonal, komunikasi organisasi, massa, dan humas. Mengembangkan kemampuan komunikasi, koordinasi, problem-solving, dan teamwork.</p>
+                            </div>
+                        </div>
+
+                        <!-- Edu 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[33px] bg-white border-2 border-gray-400 w-4 h-4 rounded-full mt-1.5"></span>
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                <span class="text-sm font-semibold text-gray-600 bg-gray-200 px-3 py-1 rounded-full mb-2 inline-block">2022</span>
+                                <h4 class="text-lg font-bold text-gray-900 mt-2">SMK Negeri 50 Jakarta</h4>
+                                <p class="text-gray-700 font-medium text-sm mb-2">Bisnis Daring dan Pemasaran</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">Pengalaman administrasi, pemasaran, dan komunikasi bisnis. Aktif sebagai pengurus Rohis bidang Sumber Daya (pendataan, perekrutan, dan keaktifan anggota).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-olive-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">My Skills</h2>
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
+                <!-- Skill Badges -->
+                <span class="px-5 py-2.5 bg-white border border-olive-200 text-olive-700 rounded-full font-medium shadow-sm hover:bg-olive-600 hover:text-white transition-all cursor-default flex items-center gap-2">
+                    <i class="fa-solid fa-comments"></i> Communication
+                </span>
+                <span class="px-5 py-2.5 bg-white border border-olive-200 text-olive-700 rounded-full font-medium shadow-sm hover:bg-olive-600 hover:text-white transition-all cursor-default flex items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> Customer Service
+                </span>
+                <span class="px-5 py-2.5 bg-white border border-olive-200 text-olive-700 rounded-full font-medium shadow-sm hover:bg-olive-600 hover:text-white transition-all cursor-default flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Event Coordination
+                </span>
+                <span class="px-5 py-2.5 bg-white border border-olive-200 text-olive-700 rounded-full font-medium shadow-sm hover:bg-olive-600 hover:text-white transition-all cursor-default flex items-center gap-2">
+                    <i class="fa-solid fa-users"></i> Teamwork
+                </span>
+                <span class="px-5 py-2.5 bg-white border border-olive-200 text-olive-700 rounded-full font-medium shadow-sm hover:bg-olive-600 hover:text-white transition-all cursor-default flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb"></i> Problem Solving
+                </span>
+                <span class="px-5 py-2.5 bg-white border border-olive-200 text-olive-700 rounded-full font-medium shadow-sm hover:bg-olive-600 hover:text-white transition-all cursor-default flex items-center gap-2">
+                    <i class="fa-solid fa-pen-nib"></i> Canva
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pengalaman Kerja</h2>
+                <div class="w-20 h-1 bg-olive-600 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Experience Showcase Layout -->
+            <div class="space-y-12">
+                
+                <!-- Experience 1 (GSBY - Liaison Officer) -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Documentation Photo (Portrait Aspect Ratio 3:4) -->
+                        <div class="lg:col-span-5 w-full">
+                            <div class="w-full aspect-[3/4] max-h-[520px] rounded-2xl overflow-hidden bg-gray-100 relative border border-gray-100 shadow-sm">
+                                <img id="exp1-img" src="WhatsApp%20Image%202026-09-22%20at%2018.58.40%20(2).jpeg" alt="Dokumentasi Liaison Officer GSBY" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="lg:col-span-7 flex flex-col justify-center space-y-4">
+                            <div class="flex flex-wrap justify-between items-start gap-2 border-b border-gray-100 pb-4">
+                                <div>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-olive-700 bg-olive-50 px-3 py-1 rounded-full mb-2 inline-block">Event & Coordination</span>
+                                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-olive-600 transition-colors">Liaison Officer</h3>
+                                    <p class="text-lg text-olive-700 font-semibold mt-1">GSBY (Gelar Seni Budaya Yogyakarta)</p>
+                                    <p class="text-sm text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-1.5 text-olive-600"></i> TMII, Jakarta Timur</p>
+                                </div>
+                                <span class="bg-olive-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">Mei 2025</span>
+                            </div>
+
+                            <ul class="space-y-3 text-gray-600 text-sm sm:text-base pt-2">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Menjalin komunikasi dengan kontingen peserta sebelum acara berlangsung untuk menyampaikan informasi teknis, jadwal kegiatan, dan kebutuhan acara.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Menyambut serta mendampingi peserta saat kedatangan dengan memberikan arahan terkait lokasi kegiatan, area istirahat, dan kebutuhan selama acara.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Memastikan peserta memperoleh informasi yang dibutuhkan melalui koordinasi aktif dengan panitia dan pihak terkait.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Membantu kelancaran pelaksanaan acara dengan mengoordinasikan kebutuhan peserta serta menyampaikan informasi secara tepat waktu.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 (Yogyakarta Royal Orchestra - Usher) -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Documentation Photo (Portrait Aspect Ratio 3:4) -->
+                        <div class="lg:col-span-5 w-full">
+                            <div class="w-full aspect-[3/4] max-h-[520px] rounded-2xl overflow-hidden bg-gray-100 relative border border-gray-100 shadow-sm">
+                                <img id="exp2-img" src="WhatsApp%20Image%202026-09-22%20at%2018.58.40%20(3).jpeg" alt="Dokumentasi Usher Yogyakarta Royal Orchestra" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="lg:col-span-7 flex flex-col justify-center space-y-4">
+                            <div class="flex flex-wrap justify-between items-start gap-2 border-b border-gray-100 pb-4">
+                                <div>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-olive-700 bg-olive-50 px-3 py-1 rounded-full mb-2 inline-block">Hospitality & Event</span>
+                                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-olive-600 transition-colors">Usher</h3>
+                                    <p class="text-lg text-olive-700 font-semibold mt-1">Yogyakarta Royal Orchestra</p>
+                                    <p class="text-sm text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-1.5 text-olive-600"></i> MNC Tower, Jakarta</p>
+                                </div>
+                                <span class="bg-olive-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">April 2025</span>
+                            </div>
+
+                            <ul class="space-y-3 text-gray-600 text-sm sm:text-base pt-2">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Membantu proses penerimaan tamu undangan VIP, pejabat, dan pengunjung umum selama 3 hari pelaksanaan acara.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Melakukan pemeriksaan tiket serta memberikan arahan terkait lokasi tempat duduk sesuai kategori pengunjung.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Memberikan informasi dan bantuan kepada pengunjung untuk memastikan pengalaman acara yang nyaman dan tertib.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 flex-shrink-0"></i>
+                                    <span>Membantu mengatur alur kedatangan pengunjung sehingga proses masuk acara berjalan terorganisir.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid for non-photo experiences -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                    <!-- Experience 3: Tutor Privat -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4 border-b border-gray-100 pb-4">
+                                <div>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-olive-700 bg-olive-50 px-3 py-1 rounded-full mb-2 inline-block">Education & Mentoring</span>
+                                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-olive-600 transition-colors">Tutor Privat</h3>
+                                    <p class="text-olive-700 font-semibold text-sm">Freelance / Mandiri</p>
+                                    <p class="text-xs text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Jakarta</p>
+                                </div>
+                                <span class="bg-gray-100 text-gray-700 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">2024 - Sekarang</span>
+                            </div>
+                            <ul class="space-y-2.5 text-gray-600 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Pendampingan belajar calistung & mapel sekolah untuk siswa TK, SD, dan SMP.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Menyesuaikan metode belajar berdasarkan kemampuan & karakter siswa.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Komunikasi rutin dengan orang tua untuk memantau perkembangan belajar.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Membantu siswa dari belum bisa membaca menjadi lancar membaca mandiri dalam 6 bulan.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Mendukung pengendalian emosi siswa melalui pendekatan sabar dan terstruktur.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4: Server -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4 border-b border-gray-100 pb-4">
+                                <div>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-olive-700 bg-olive-50 px-3 py-1 rounded-full mb-2 inline-block">Service & Hospitality</span>
+                                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-olive-600 transition-colors">Server</h3>
+                                    <p class="text-olive-700 font-semibold text-sm">Coverage Coffe and Eatery</p>
+                                    <p class="text-xs text-gray-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Jakarta</p>
+                                </div>
+                                <span class="bg-gray-100 text-gray-700 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">2022</span>
+                            </div>
+                            <ul class="space-y-2.5 text-gray-600 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Melayani pelanggan secara langsung dengan cepat dan tepat.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Menjaga kebersihan area kerja dan kesiapan operasional kafe.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Berkoordinasi dengan tim untuk menjaga kualitas layanan.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-circle-check text-olive-600 mt-1 text-xs flex-shrink-0"></i>
+                                    <span>Menangani permintaan pelanggan dengan ramah untuk pengalaman positif.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <!-- Abstract shape -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-olive-600 opacity-20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-olive-400 opacity-20 rounded-full blur-3xl -ml-32 -mb-32"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-gray-300 mb-10 text-lg">
+                Tertarik untuk berkolaborasi atau memiliki peluang pekerjaan? Jangan ragu untuk menghubungi saya melalui kontak di bawah ini.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <!-- Email Card -->
+                <a href="mailto:helmysunanto50@gmail.com" class="flex items-center gap-4 bg-gray-800 hover:bg-olive-700 transition-colors p-5 rounded-2xl w-full sm:w-auto min-w-[280px]">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full text-olive-400 text-xl">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm text-gray-400 font-medium">Email Me</p>
+                        <p class="text-white font-semibold">helmysunanto50@gmail.com</p>
+                    </div>
+                </a>
+                
+                <!-- Phone / WhatsApp Card -->
+                <a href="https://wa.me/6285892642844" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 bg-gray-800 hover:bg-olive-700 transition-colors p-5 rounded-2xl w-full sm:w-auto min-w-[280px]">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-700 rounded-full text-olive-400 text-xl">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm text-gray-400 font-medium">Call / WhatsApp</p>
+                        <p class="text-white font-semibold">0858 9264 2844</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-gray-400 py-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm">&copy; 2026 Helmy Sunanto. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (menu && btn) {
+            const menuLinks = menu.querySelectorAll('a');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close menu when a link is clicked
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
